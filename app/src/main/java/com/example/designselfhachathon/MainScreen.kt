@@ -118,7 +118,7 @@ fun UnleashCreativityBlock(GoTo: ()->Unit){
                 .size(128.dp)
                 .clip(CircleShape)){
             }
-            Column(modifier = Modifier.padding(vertical = 24.dp, horizontal = 16.dp).clickable { GoTo() }, verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            Column(modifier = Modifier.padding(vertical = 24.dp, horizontal = 16.dp).clickable { }, verticalArrangement = Arrangement.spacedBy(8.dp)) {
 
                 Text("Unleash your creativity with Ai ME!", color = TextWhite, fontSize = 24.sp)
                 Text("Createing a photo AI using magical tools in our app", color = TextWhite, fontSize = 16.sp)
@@ -126,7 +126,7 @@ fun UnleashCreativityBlock(GoTo: ()->Unit){
 
                     Box(modifier = Modifier
                         .background(color = VioletGradient)
-                        .clickable { OnClick() } ){
+                        .clickable { GoTo() } ){
                         Text("Create Studio", color = TextWhite, modifier = Modifier.padding(vertical = 16.dp, horizontal = 8.dp), fontSize = 20.sp)
                     }
                 }
@@ -233,7 +233,7 @@ fun CreatorItem(cr: Creator){
                     }
 
                 }
-                Text(cr.name, fontSize = 12.sp, color = TextColor)
+                Text(cr.name, fontSize = 12.sp, color = TextColor, modifier = Modifier)
 
             }
         }
